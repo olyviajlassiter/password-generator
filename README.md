@@ -7,7 +7,7 @@ AS AN employee with access to sensitive data<br>
 I WANT to randomly generate a password that meets certain criteria<br>
 SO THAT I can create a strong password that provides greater security<br>
 
-<br>The acceptance criteria is as follows</b><br>
+<b>The acceptance criteria is as follows</b><br>
 GIVEN I need a new, secure password<br>
 WHEN I click the button to generate a password<br>
 THEN I am presented with a series of prompts for password criteria<br>

@@ -10,18 +10,16 @@ var generateBtn = document.querySelector("#generate");
 upperCaseCharacters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 lowerCaseCharacters = "abcdefghijklmnopqrstuvwxyz";
 numberCharacters = "1234567890";
-specialCharacters = ",.!@#$%^&*";
+specialCharacters = "@#$%^&*(){}[]=<>/,.";
 
 
 
 function generatePassword () {
   characterLength = window.prompt (" Please choose between 8 and 128 characters to generate your unique password. ");
   
-if (!characterLength) {
+if (!characterLength || characterLength  <= 7 || characterLength >= 129 ) {
   window.alert("Try again! Please choose between 8 and 128 characters to generate your unique password. ");
-}
-else if (characterLength  <= 7 || characterLength >= 129 ) {
-  window.alert(" Try again. Please choose between 8 and 128 characters to generate your unique password. ");
+return '';
 }
 else {
   lowerCase = window.confirm("Do you want to add lowercase letters to your unique password?");
@@ -66,15 +64,23 @@ else if (upperCase && special) {
 else if (numbers && special) {
   options = numberCharacters + specialCharacters;
 }
-for (var i = 0; i <= characterLength; i++) {
+
+
+
+
+for (var i = 0; i < characterLength; i++) {
   var randomNumber = options[Math.floor(Math.random() * options.length)];
   createPassword.push(randomNumber);
 } 
 var generatePassword = createPassword.join("");
+window.alert("Here is your unique password!");
 return generatePassword;
+
+
 };
 
 generateBtn.addEventListener("click", writePassword);
+
 
 
 

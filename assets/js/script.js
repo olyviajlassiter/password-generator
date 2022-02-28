@@ -64,10 +64,6 @@ else if (upperCase && special) {
 else if (numbers && special) {
   options = numberCharacters + specialCharacters;
 }
-
-
-
-
 for (var i = 0; i < characterLength; i++) {
   var randomNumber = options[Math.floor(Math.random() * options.length)];
   createPassword.push(randomNumber);
@@ -75,15 +71,9 @@ for (var i = 0; i < characterLength; i++) {
 var generatePassword = createPassword.join("");
 window.alert("Here is your unique password!");
 return generatePassword;
-
-
 };
 
 generateBtn.addEventListener("click", writePassword);
-
-
-
-
 
 // Write password to the #password input
 function writePassword() {
@@ -91,7 +81,6 @@ function writePassword() {
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
-
 }
 
 
